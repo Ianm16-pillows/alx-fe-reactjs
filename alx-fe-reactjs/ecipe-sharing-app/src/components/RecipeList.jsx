@@ -1,17 +1,18 @@
-import React from 'react'
-import { useRecipeStore } from '../store/recipeStore'
+import create from 'zustand'
 
-export default function RecipeList() {
-  const recipes = useRecipeStore((state) => state.recipes)
-
-  return (
-    <div>
-      {recipes.map((recipe) => (
-        <div key={recipe.id}>
-          <h3>{recipe.title}</h3>
-          <p>{recipe.description}</p>
-        </div>
-      ))}
-    </div>
-  )
-}
+export const useRecipeStore = create((set) => ({
+  recipes: [],
+  addRecipe: (newRecipe) =>
+    set((state) => ({ recipes: [...state.recipes, newRecipe] })),
+  setRecipes: (recipes) => set({ recipes }),
+  updateRecipe: (id, updatedRecipe) =>
+    set((state) => ({
+      recipes: state.recipes.map((r) =>
+        r.id === id ? { ...r, ...updatedRecipe } : r
+      )
+    })),
+  deleteRecipe: (id) =>
+    set((state) => ({
+      recipes: state.recipes.filter((r) => r.id !== id)
+    }))
+}))
