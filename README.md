@@ -12,3 +12,6 @@ This project introduces React basics, JSX, components, props, and setup using Vi
 
 ### Author
 Created by GitHub user **<your-username>**
+git add .
+git commit -m "Task 0: React project setup for GitHub User Search"
+git push origin main
