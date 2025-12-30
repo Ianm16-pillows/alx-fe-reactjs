@@ -1,12 +1,5 @@
-import Search from "./components/Search";
-
-function App() {
-  return (
-    <div>
-      <h1>GitHub User Search Application</h1>
-      <Search />
-    </div>
-  );
+function Search() {
+  return <p>Search component placeholder</p>;
 }
 
-export default App;
+export default Search;
