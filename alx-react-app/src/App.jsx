@@ -1,10 +1,16 @@
 function App() {
+  const user = {
+    name: "Ian Mwambuki",
+    age: 25,
+    location: "Kenya"
+  };
+
   return (
-    <div>
-      <h1>Hello React</h1>
-      <p>This is my first React app using Vite.</p>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <WelcomeMessage />
+      <UserProfile user={user} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
