@@ -1,14 +1,15 @@
-import React from 'react'
-import RecipeList from './components/RecipeList'
-import AddRecipeForm from './components/AddRecipeForm'
+import AddRecipeForm from './components/AddRecipeForm';
+import RecipeList from './components/RecipeList';
 
-export default function App() {
+const App = () => {
   return (
-    <div style={{ padding: '20px' }}>
+    <div>
       <h1>Recipe Sharing App</h1>
       <AddRecipeForm />
-      <hr />
       <RecipeList />
     </div>
-  )
-}
+  );
+};
+
+export default App;
+
