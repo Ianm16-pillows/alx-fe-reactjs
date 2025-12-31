@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
 import RecipeDetails from './components/RecipeDetails';
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <h1>Recipe Sharing Application</h1>
 
       <Routes>
@@ -20,9 +20,8 @@ const App = () => {
         />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
       </Routes>
-    </div>
+    </Router>
   );
 };
 
 export default App;
-
