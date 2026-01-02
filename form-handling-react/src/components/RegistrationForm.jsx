@@ -4,19 +4,28 @@ const RegistrationForm = () => {
   const [username, setUsername] = useState("Ian Mwambuki");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!username || !email || !password) {
-      setError("All fields are required");
+    if (!email) {
+      setErrors("Email is required");
       return;
     }
 
-    setError("");
+    if (!password) {
+      setErrors("Password is required");
+      return;
+    }
 
-    // Mock API simulation
+    if (!username) {
+      setErrors("Username is required");
+      return;
+    }
+
+    setErrors("");
+
     console.log({
       username,
       email,
@@ -27,35 +36,4 @@ const RegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Register (Controlled Components)</h2>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-
-      <button type="submit">Register</button>
-    </form>
-  );
-};
-
-export default RegistrationForm;
+    <form onSubmit
