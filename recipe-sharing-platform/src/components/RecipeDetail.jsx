@@ -7,12 +7,12 @@ function RecipeDetail() {
 
   useEffect(() => {
     fetch("/src/data.json")
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
-        const selectedRecipe = data.find(
+        const found = data.find(
           (item) => item.id === parseInt(id)
         );
-        setRecipe(selectedRecipe);
+        setRecipe(found);
       });
   }, [id]);
 
@@ -21,11 +21,11 @@ function RecipeDetail() {
   }
 
   return (
-    <div className="p-6 max-w-3xl mx-auto">
+    <div className="p-6 max-w-3xl mx-auto bg-white shadow-lg rounded-lg">
       <img
         src={recipe.image}
         alt={recipe.title}
-        className="w-full h-64 object-cover rounded-lg mb-6"
+        className="w-full h-64 object-cover rounded mb-6"
       />
 
       <h1 className="text-3xl font-bold mb-4">
@@ -36,8 +36,8 @@ function RecipeDetail() {
         Ingredients
       </h2>
       <ul className="list-disc list-inside mb-6">
-        {recipe.ingredients?.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
+        {recipe.ingredients.map((item, index) => (
+          <li key={index}>{item}</li>
         ))}
       </ul>
 
@@ -52,4 +52,3 @@ function RecipeDetail() {
 }
 
 export default RecipeDetail;
-
