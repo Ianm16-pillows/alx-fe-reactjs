@@ -7,3 +7,5 @@ node_modules/
 # Vite build output
 dist/
 
+# VSCode settings
+.vscode/
