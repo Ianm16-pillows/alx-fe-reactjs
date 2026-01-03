@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Spaghetti Carbonara",
-    "summary": "A classic Italian pasta dish.",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
     "image": "https://via.placeholder.com/300",
     "ingredients": [
       "Spaghetti",
@@ -16,7 +16,7 @@
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
-    "summary": "Creamy and spiced chicken curry.",
+    "summary": "Chunks of grilled chicken cooked in a creamy tomato-based sauce.",
     "image": "https://via.placeholder.com/300",
     "ingredients": [
       "Chicken",
@@ -27,4 +27,3 @@
     "instructions": "Grill chicken. Prepare sauce. Combine and simmer."
   }
 ]
-
