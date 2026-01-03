@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import UserCard from "./components/UserCard";
-import { searchUsers } from "./services/githubService";
+import axios from "axios";
 
 export default function App() {
   const [users, setUsers] = useState([]);
@@ -9,8 +9,13 @@ export default function App() {
 
   const handleSearch = async (query) => {
     setLoading(true);
-    const results = await searchUsers(query);
-    setUsers(results);
+    try {
+      const res = await axios.get(`https://api.github.com/search/users?q=${query}`);
+      setUsers(res.data.items);
+    } catch (err) {
+      console.error("Error fetching users:", err);
+      setUsers([]);
+    }
     setLoading(false);
   };
 
