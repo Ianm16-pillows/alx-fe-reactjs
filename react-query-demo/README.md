@@ -1,28 +1,24 @@
-# React Query Demo 🚀
+# React Router Advanced Demo 🚀
 
-This project demonstrates **advanced data handling in React** using **React Query**, focusing on efficient API interactions, caching, and UI responsiveness.  
+This project demonstrates **advanced routing in React** using **React Router v6**, focusing on nested routes, dynamic routes, and protected routes.
 
 ---
 
 ## Features
 
-- Fetch posts from JSONPlaceholder API
-- Caching with React Query
-- Refetch posts on button click
-- Handles loading and error states
+- Nested routes: `Profile` → `ProfileDetails` & `ProfileSettings`  
+- Dynamic routes: `Post/:id`  
+- Protected routes that require authentication  
+- Seamless navigation between pages  
 
 ---
 
 ## Tech Stack
 
-- React (Vite)
-- React Query
-- JavaScript (ES6+)
+- React (Vite)  
+- React Router DOM v6  
 
 ---
 
-## Getting Started
+## Project Structure
 
-```bash
-npm install
-npm run dev
