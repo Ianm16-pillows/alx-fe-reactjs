@@ -1,22 +1,23 @@
-# React Router Advanced Demo 🚀
+# React Todo List Demo 📝
 
-This project demonstrates **advanced routing in React** using **React Router v6**, focusing on nested routes, dynamic routes, and protected routes.
+This project demonstrates a fully functional Todo List in React with **add, toggle, delete** functionality and **testing with Jest and React Testing Library**.
 
 ---
 
 ## Features
 
-- Nested routes: `Profile` → `ProfileDetails` & `ProfileSettings`  
-- Dynamic routes: `Post/:id`  
-- Protected routes that require authentication  
-- Seamless navigation between pages  
+- Display initial demo todos  
+- Add new todos  
+- Toggle todos between completed/not completed  
+- Delete todos  
+- Tests for rendering, adding, toggling, deleting todos  
 
 ---
 
 ## Tech Stack
 
 - React (Vite)  
-- React Router DOM v6  
+- Jest & React Testing Library  
 
 ---
 
