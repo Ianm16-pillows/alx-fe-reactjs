@@ -21,6 +21,7 @@ export default function Search() {
     } else {
       setError("Looks like we can't find the user");
     }
+
     setLoading(false);
   };
 
@@ -62,7 +63,7 @@ export default function Search() {
             >
               View Profile
             </a>
-            <p className="text-sm text-gray-600">{user.bio}</p>
+            {user.bio && <p className="text-sm text-gray-600">{user.bio}</p>}
           </div>
         </div>
       )}
