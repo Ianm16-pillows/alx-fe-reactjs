@@ -3,7 +3,7 @@ node_modules/
 
 # Environment variables
 .env
-.VSCode/
 
 # Vite build output
 dist/
+
