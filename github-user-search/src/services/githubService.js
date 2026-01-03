@@ -1,9 +1,9 @@
 import axios from "axios";
 
 /**
- * Fetch user data from GitHub API.
- * @param {string} username - GitHub username to search
- * @returns {object|null} - user data or null if not found
+ * Fetch GitHub user data by username
+ * @param {string} username
+ * @returns {object|null}
  */
 export const fetchUserData = async (username) => {
   try {
@@ -11,7 +11,6 @@ export const fetchUserData = async (username) => {
     return res.data;
   } catch (err) {
     console.error("GitHub API Error:", err);
-    return null; // Return null if user not found or error
+    return null; // Return null if not found
   }
 };
-
