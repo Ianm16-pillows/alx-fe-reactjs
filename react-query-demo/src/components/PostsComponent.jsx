@@ -15,7 +15,9 @@ const PostsComponent = () => {
   return (
     <div>
       <h2>Posts</h2>
+
       <button onClick={() => refetch()}>Refetch Posts</button>
+
       <ul>
         {posts.slice(0, 10).map((post) => (
           <li key={post.id}>
