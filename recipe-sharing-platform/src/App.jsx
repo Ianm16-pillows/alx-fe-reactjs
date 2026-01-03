@@ -1,9 +1,9 @@
+import HomePage from "./pages/HomePage";
+
 function App() {
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold">
-        Recipe Sharing Platform
-      </h1>
+    <div className="min-h-screen bg-gray-100">
+      <HomePage />
     </div>
   );
 }
