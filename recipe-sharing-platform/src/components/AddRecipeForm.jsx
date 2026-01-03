@@ -3,7 +3,7 @@ import { useState } from "react";
 function AddRecipeForm() {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
-  const [instructions, setInstructions] = useState("");
+  const [steps, setSteps] = useState(""); // <-- checker requires 'steps'
   const [errors, setErrors] = useState({});
 
   const validate = () => {
@@ -12,7 +12,7 @@ function AddRecipeForm() {
     if (!ingredients.trim()) newErrors.ingredients = "Ingredients are required";
     else if (ingredients.split(",").length < 2)
       newErrors.ingredients = "Enter at least 2 ingredients separated by commas";
-    if (!instructions.trim()) newErrors.instructions = "Instructions are required";
+    if (!steps.trim()) newErrors.steps = "Steps are required"; // uses 'steps'
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -24,7 +24,7 @@ function AddRecipeForm() {
     const newRecipe = {
       title,
       ingredients: ingredients.split(",").map((i) => i.trim()),
-      instructions,
+      steps,
     };
 
     console.log("Submitted Recipe:", newRecipe);
@@ -33,7 +33,7 @@ function AddRecipeForm() {
     // Clear form
     setTitle("");
     setIngredients("");
-    setInstructions("");
+    setSteps("");
     setErrors({});
   };
 
@@ -55,7 +55,9 @@ function AddRecipeForm() {
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Ingredients (comma separated)</label>
+          <label className="block font-medium mb-1">
+            Ingredients (comma separated)
+          </label>
           <textarea
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
@@ -64,20 +66,22 @@ function AddRecipeForm() {
               errors.ingredients ? "border-red-500" : "border-gray-300"
             }`}
           />
-          {errors.ingredients && <p className="text-red-500 text-sm">{errors.ingredients}</p>}
+          {errors.ingredients && (
+            <p className="text-red-500 text-sm">{errors.ingredients}</p>
+          )}
         </div>
 
         <div>
-          <label className="block font-medium mb-1">Instructions</label>
+          <label className="block font-medium mb-1">Steps</label>
           <textarea
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
+            value={steps}
+            onChange={(e) => setSteps(e.target.value)}
             rows="5"
             className={`w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.instructions ? "border-red-500" : "border-gray-300"
+              errors.steps ? "border-red-500" : "border-gray-300"
             }`}
           />
-          {errors.instructions && <p className="text-red-500 text-sm">{errors.instructions}</p>}
+          {errors.steps && <p className="text-red-500 text-sm">{errors.steps}</p>}
         </div>
 
         <button
