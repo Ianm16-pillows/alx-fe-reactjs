@@ -1,25 +1,28 @@
 # React Query Demo 🚀
 
-This project demonstrates **advanced data handling in React** using **React Query**, focusing on efficient API interactions, caching, and UI responsiveness. It is part of the **ALX Front-End ReactJS** curriculum.
+This project demonstrates **advanced data handling in React** using **React Query**, focusing on efficient API interactions, caching, and UI responsiveness.  
 
 ---
 
-## 🎯 Objective
+## Features
 
-To fetch, cache, and update data from a public API using React Query, showcasing how modern React apps manage server state efficiently.
+- Fetch posts from JSONPlaceholder API
+- Caching with React Query
+- Refetch posts on button click
+- Handles loading and error states
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 - React (Vite)
 - React Query
 - JavaScript (ES6+)
-- JSONPlaceholder API
 
 ---
 
-## 🌐 API Used
+## Getting Started
 
-**JSONPlaceholder – Posts Endpoint**
-
+```bash
+npm install
+npm run dev
