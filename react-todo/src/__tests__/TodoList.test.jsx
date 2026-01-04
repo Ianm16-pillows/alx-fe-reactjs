@@ -1,3 +1,4 @@
+import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import TodoList from "../components/TodoList";
 
@@ -11,9 +12,8 @@ describe("TodoList Component", () => {
   test("can add a new todo", () => {
     render(<TodoList />);
     const input = screen.getByPlaceholderText("Add todo...");
-    const addButton = screen.getByText("Add");
     fireEvent.change(input, { target: { value: "New Todo" } });
-    fireEvent.click(addButton);
+    fireEvent.click(screen.getByText("Add"));
     expect(screen.getByText("New Todo")).toBeInTheDocument();
   });
 
