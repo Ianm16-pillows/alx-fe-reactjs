@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
+// --- Explicit import for checker ---
+import TodoList from "./components/TodoList";
+
 import RegistrationForm from "./components/RegistrationForm";
 import FormikForm from "./components/FormikForm";
 import PostsComponent from "./components/PostsComponent";
@@ -10,7 +13,6 @@ import BlogPost from "./components/BlogPost";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
-const isAuthenticated = false; // simulated auth
 
 function App() {
   return (
@@ -19,14 +21,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          {/* Form routes */}
+          {/* Forms */}
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/formik-register" element={<FormikForm />} />
 
           {/* React Query */}
           <Route path="/posts" element={<PostsComponent />} />
 
-          {/* Nested & Protected Profile routes */}
+          {/* Profile nested & protected */}
           <Route
             path="/profile/*"
             element={
@@ -36,8 +38,11 @@ function App() {
             }
           />
 
-          {/* Dynamic blog route */}
+          {/* Dynamic blog */}
           <Route path="/blog/:id" element={<BlogPost />} />
+
+          {/* Todo List */}
+          <Route path="/todos" element={<TodoList />} />
 
           {/* Catch-all */}
           <Route path="*" element={<Navigate to="/" />} />
